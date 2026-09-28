@@ -1,22 +1,31 @@
-import{ BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import Header from "./Statics/Header";
 import KanbaBoard from "./Pages/KanbaBoard";
 import About from "./Pages/About";
 import Whywebuilt  from "./component/ui/about/Whywebuilt";
+import AddTask from "./component/ui/AddTask";
+import Footer from "./Statics/Footer";
 
-
+import Signup from "./Pages/Aunthentication/SignUp";
+import Login from "./Pages/Aunthentication/Login";
+import Home from "./Pages/Home";
 function App() {
 	return (
 		<BrowserRouter>
-
+  	<Header />
 		<Routes>
-			<Route path="/" element={<KanbaBoard />} />
 			<Route path="/about" element={<About />} />
 			<Route path="/why-we-built-this" element={<Whywebuilt />} />
-        </Routes>
-	 </BrowserRouter>
+				<Route path='/about' element={<About />} />
+				<Route path='/signup' element={<Signup />} />
+				<Route path='/login' element={<Login />} />
+				<Route path='/tasks' element={<KanbaBoard />} />
+				<Route path='/' element={<Home />} />
+			</Routes>
+			<Footer/>
+		</BrowserRouter>
 	);
 }
 
